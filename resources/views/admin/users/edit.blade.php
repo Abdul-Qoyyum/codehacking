@@ -8,6 +8,7 @@
 </div>
 
 <div class="col-sm-9">
+
  {!! Form::model($user,['method'=>'PATCH','route'=>['users.update',$user->id],'files'=>true]) !!}
   <div class='form-group'>
     {!! Form::label('name','Name:',['class'=>'control-label']) !!}
@@ -35,12 +36,22 @@
     {!! Form::label('is_active','Status:',['class'=>'control-label']) !!}
     {!! Form::select('is_active',[0=>'Not active',1=>'Active'],null,['class'=>'form-control']) !!}
   </div>
+
 <div class='form-group'>
-    {!! Form::submit('Create',['class'=>'btn btn-primary'])  !!}
-  </div>
+     {!! Form::submit('Create',['class'=>'btn btn-primary'])  !!}
+</div>
  {!! Form::close() !!}
 
+{!! Form::open(['method'=>'DELETE','action'=>['AdminUsersController@destroy',$user->id]])  !!}
+{!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
+{!! Form::close() !!}
+
 </div>
+
+
+
+
+
 </div>
 <div class="row">
  @include('includes.form_errors')
