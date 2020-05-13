@@ -1,5 +1,4 @@
 @extends('layouts.admin')
-
 @section('content')
 
 <h3>Create post</h3>
@@ -21,7 +20,7 @@
 
   <div class='form-group'>
     {!! Form::label('body', 'Description') !!}
-    {!! Form::textarea('body',null,['class'=>'form-control']) !!}
+    {!! Form::textarea('body',null,['class'=>'form-control','id'=>'mytextarea']) !!}
   </div>
 
   <div class='form-group'>
@@ -32,4 +31,5 @@
 <div class="row">
 @include('includes.form_errors')
 </div>
+@include('includes.tinymce')
 @stop

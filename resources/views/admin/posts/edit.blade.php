@@ -6,7 +6,7 @@
 <div class="row">
 
 <div class="col-sm-3">
- <img src="{{$post->photo->file}}" alt='Profile pic' class="img-responsive"  />
+ <img src="{{$post->photo ? $post->photo->file : null}}" alt='Profile pic' class="img-responsive"  />
 
 </div>
 
